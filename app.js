@@ -52,7 +52,7 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 220-10|Einbahnstraße – linksweisend|Richtzeichen
 220-20|Einbahnstraße – rechtsweisend|Richtzeichen
 222|Vorgeschriebene Vorbeifahrt – rechts vorbei|Vorschriftzeichen
-223-10|Vorgeschriebene Vorbeifahrt – links vorbei|Vorschriftzeichen
+222-10|Vorgeschriebene Vorbeifahrt – links vorbei|Vorschriftzeichen
 224|Haltestelle|Richtzeichen
 229|Taxenstand|Richtzeichen
 237|Radweg|Vorschriftzeichen
@@ -62,12 +62,13 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 241-30|Getrennter Rad- und Gehweg – Radverkehr links|Vorschriftzeichen
 242.1|Beginn einer Fußgängerzone|Richtzeichen
 242.2|Ende einer Fußgängerzone|Richtzeichen
-244.1|Beginn einer Fahrradzone|Richtzeichen
+244.1|Beginn einer Fahrradstraße|Richtzeichen
+244.3|Beginn einer Fahrradzone|Richtzeichen
+244.4|Ende einer Fahrradzone|Richtzeichen
 244.2|Ende einer Fahrradzone|Richtzeichen
 245|Bussonderfahrstreifen|Vorschriftzeichen
 250|Verbot für Fahrzeuge aller Art|Vorschriftzeichen
 251|Verbot für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge|Vorschriftzeichen
-252|Verbot für Krafträder|Vorschriftzeichen
 253|Verbot für Kraftfahrzeuge über 3,5 t|Vorschriftzeichen
 254|Verbot für Radverkehr|Vorschriftzeichen
 255|Verbot für Krafträder mit Beiwagen, Kleinkrafträder und Mofas|Vorschriftzeichen
@@ -267,8 +268,143 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1053-36|Bei Eisglätte|Zusatzzeichen|1
 1053-37|Bei Nässe und Schmutz|Zusatzzeichen|1
 1053-38|Bei Schnee- und Eisglätte|Zusatzzeichen|1
-1053-39|Bei Reif- und Eisglätte|Zusatzzeichen|1`;
-const signs=raw.split('\n').map(line=>{const [id,name,category,extra]=line.split('|');return{id,name,category,extra:extra==='1',svg:`https://sevas.nrw.de/vz/${id}.svg`}});
+1053-39|Bei Reif- und Eisglätte|Zusatzzeichen|1
+101-13|Reiter – Aufstellung rechts|Gefahrzeichen
+101-14|Amphibienwanderung – Aufstellung rechts|Gefahrzeichen
+101-15|Steinschlag – Aufstellung rechts|Gefahrzeichen
+101-20|Flugbetrieb – Aufstellung links|Gefahrzeichen
+101-21|Fußgängerüberweg – Aufstellung links|Gefahrzeichen
+101-22|Viehtrieb – Aufstellung links|Gefahrzeichen
+101-23|Reiter – Aufstellung links|Gefahrzeichen
+101-24|Amphibienwanderung – Aufstellung links|Gefahrzeichen
+101-25|Steinschlag – Aufstellung links|Gefahrzeichen
+101-51|Schnee- oder Eisglätte|Gefahrzeichen
+101-52|Splitt, Schotter|Gefahrzeichen
+101-53|Ufer|Gefahrzeichen
+101-54|Unzureichendes Lichtraumprofil|Gefahrzeichen
+101-55|Bewegliche Brücke|Gefahrzeichen
+102|Kreuzung oder Einmündung|Gefahrzeichen
+156-11|Bahnübergang mit dreistreifiger Bake und Entfernungsangabe – rechts|Gefahrzeichen
+156-21|Bahnübergang mit dreistreifiger Bake und Entfernungsangabe – links|Gefahrzeichen
+157|Dreistreifige Bake|Gefahrzeichen
+157-11|Dreistreifige Bake mit Entfernungsangabe – rechts|Gefahrzeichen
+157-21|Dreistreifige Bake mit Entfernungsangabe – links|Gefahrzeichen
+159|Zweistreifige Bake|Gefahrzeichen
+159-11|Zweistreifige Bake mit Entfernungsangabe – rechts|Gefahrzeichen
+159-21|Zweistreifige Bake mit Entfernungsangabe – links|Gefahrzeichen
+162|Einstreifige Bake|Gefahrzeichen
+162-10|Einstreifige Bake – Aufstellung rechts|Gefahrzeichen
+162-20|Einstreifige Bake – Aufstellung links|Gefahrzeichen
+201|Andreaskreuz|Vorschriftzeichen
+201-51|Andreaskreuz – stehend mit Blitzpfeil|Vorschriftzeichen
+201-52|Andreaskreuz – liegend|Vorschriftzeichen
+201-53|Andreaskreuz – liegend mit Blitzpfeil|Vorschriftzeichen
+220-40|Einbahnstraße – doppelseitig|Richtzeichen
+223.1|Seitenstreifen befahren|Vorschriftzeichen
+223.2|Seitenstreifen nicht mehr befahren|Vorschriftzeichen
+223.3|Seitenstreifen räumen|Vorschriftzeichen
+230|Ladebereich|Vorschriftzeichen
+230-10|Ladebereich – Anfang rechts|Vorschriftzeichen
+230-20|Ladebereich – Ende rechts|Vorschriftzeichen
+241|Getrennter Rad- und Gehweg|Vorschriftzeichen
+257-50|Verbot für Mofas|Vorschriftzeichen
+257-51|Verbot für Reiter|Vorschriftzeichen
+257-52|Verbot für Gespannfuhrwerke|Vorschriftzeichen
+257-53|Verbot für Viehtrieb|Vorschriftzeichen
+257-54|Verbot für Kraftomnibusse|Vorschriftzeichen
+257-55|Verbot für Personenkraftwagen|Vorschriftzeichen
+257-56|Verbot für Personenkraftwagen mit Anhänger|Vorschriftzeichen
+257-57|Verbot für Lastkraftwagen mit Anhänger|Vorschriftzeichen
+257-58|Verbot für Fahrzeuge bis 25 km/h|Vorschriftzeichen
+257-59|Verbot für Elektrokleinstfahrzeuge|Vorschriftzeichen
+277.1|Überholverbot von einspurigen Fahrzeugen|Vorschriftzeichen
+281.1|Ende des Überholverbots von einspurigen Fahrzeugen|Vorschriftzeichen
+314-50|Parkhaus, Parkgarage|Richtzeichen
+318|Parkscheibe|Richtzeichen
+328|Nothalte- und Pannenbucht|Richtzeichen
+350.1|Radschnellweg|Richtzeichen
+350.2|Ende des Radschnellwegs|Richtzeichen
+357-50|Sackgasse – für Radverkehr und Fußgänger durchlässig|Richtzeichen
+357-51|Sackgasse – für Fußgänger durchlässig|Richtzeichen
+357-52|Sackgasse – für Radverkehr durchlässig|Richtzeichen
+365-51|Notrufsäule|Richtzeichen
+365-52|Tankstelle|Richtzeichen
+365-58|Toilette|Richtzeichen
+365-65|Ladestation für Elektrofahrzeuge|Richtzeichen
+365-66|Wasserstofftankstelle|Richtzeichen
+386.2|Touristische Route|Richtzeichen
+386.3|Touristische Unterrichtungstafel|Richtzeichen
+390.2|Ende der Mautpflicht|Richtzeichen
+500|Überleitungstafel|Verkehrseinrichtung
+501|Überleitungsbake|Verkehrseinrichtung
+502|Überleitungstafel mit Gegenverkehr|Verkehrseinrichtung
+605-10|Leitbake – Aufstellung rechts|Verkehrseinrichtung
+605-20|Leitbake – Aufstellung links|Verkehrseinrichtung
+605-40|Leitbake – doppelseitig|Verkehrseinrichtung
+610|Leitkegel|Verkehrseinrichtung
+615|Fahrbare Absperrtafel|Verkehrseinrichtung
+616|Fahrbare Absperrtafel mit Blinkpfeil|Verkehrseinrichtung
+625-10|Richtungstafel in Kurven – linksweisend|Verkehrseinrichtung
+625-20|Richtungstafel in Kurven – rechtsweisend|Verkehrseinrichtung
+626|Leitplatte|Verkehrseinrichtung
+627|Leitmal|Verkehrseinrichtung
+628|Leitschwelle mit Leitbake|Verkehrseinrichtung
+629|Leitbord mit Leitbake|Verkehrseinrichtung
+630|Parkwarntafel|Verkehrseinrichtung
+1000-10|Richtung, linksweisend|Zusatzzeichen|1
+1000-11|Vorankündigung, linksweisend|Zusatzzeichen|1
+1000-20|Richtung, rechtsweisend|Zusatzzeichen|1
+1000-21|Vorankündigung, rechtsweisend|Zusatzzeichen|1
+1000-32|Radverkehr kreuzt von links und rechts|Zusatzzeichen|1
+1001-30|Auf … m|Zusatzzeichen|1
+1001-31|Auf … km|Zusatzzeichen|1
+1001-32|Noch … m|Zusatzzeichen|1
+1001-33|Noch … km|Zusatzzeichen|1
+1002-11|Verlauf der Vorfahrtstraße an Kreuzungen – von oben nach links|Zusatzzeichen|1
+1002-12|Verlauf der Vorfahrtstraße – Einmündung von oben|Zusatzzeichen|1
+1002-13|Verlauf der Vorfahrtstraße – Einmündung von rechts|Zusatzzeichen|1
+1002-20|Verlauf der Vorfahrtstraße an Kreuzungen – von unten nach rechts|Zusatzzeichen|1
+1002-21|Verlauf der Vorfahrtstraße an Kreuzungen – von oben nach rechts|Zusatzzeichen|1
+1004-32|Stop in 100 m|Zusatzzeichen|1
+1006-30|Schleudergefahr für Wohnwagengespanne|Zusatzzeichen|1
+1006-31|Unfallgefahr|Zusatzzeichen|1
+1006-32|Unfallgefahr LKW|Zusatzzeichen|1
+1007-31|Rauch|Zusatzzeichen|1
+1007-32|Rollsplitt|Zusatzzeichen|1
+1007-33|Baustellenausfahrt|Zusatzzeichen|1
+1007-34|Straßenschäden|Zusatzzeichen|1
+1007-35|Verschmutzte Fahrbahn|Zusatzzeichen|1
+1007-36|Sprengarbeiten|Zusatzzeichen|1
+1007-50|Unfall|Zusatzzeichen|1
+1007-51|Hochwasser|Zusatzzeichen|1
+1007-61|Nebel|Zusatzzeichen|1
+1008-30|Vorfahrt geändert|Zusatzzeichen|1
+1008-31|Verkehrsführung geändert|Zusatzzeichen|1
+1010-12|Parkflächen für Anhänger auch länger als 14 Tage|Zusatzzeichen|1
+1010-14|Information Rollende Landstraße|Zusatzzeichen|1
+1010-52|Radverkehr|Zusatzzeichen|1
+1010-53|Fußgänger|Zusatzzeichen|1
+1010-54|Reiter|Zusatzzeichen|1
+1010-55|Viehtrieb|Zusatzzeichen|1
+1010-56|Straßenbahn|Zusatzzeichen|1
+1010-57|Kraftomnibus|Zusatzzeichen|1
+1010-58|Personenkraftwagen|Zusatzzeichen|1
+1010-59|Personenkraftwagen mit Anhänger|Zusatzzeichen|1
+1010-60|Lastkraftwagen mit Anhänger|Zusatzzeichen|1
+1010-61|Kraftfahrzeuge bis 25 km/h|Zusatzzeichen|1
+1010-62|Krafträder und Mopeds|Zusatzzeichen|1
+1010-63|Mofas|Zusatzzeichen|1
+1010-64|Gespannfuhrwerk|Zusatzzeichen|1
+1010-65|E-Bikes|Zusatzzeichen|1
+1010-66|Elektrisch betriebene Fahrzeuge|Zusatzzeichen|1
+1010-67|Wohnmobile|Zusatzzeichen|1
+1010-68|Elektrokleinstfahrzeug|Zusatzzeichen|1
+1010-69|Lastenfahrrad|Zusatzzeichen|1
+1012-30|Ladezone|Zusatzzeichen|1
+1012-32|Radfahrer absteigen|Zusatzzeichen|1
+1012-33|Keine Mofas|Zusatzzeichen|1`;
+const blockedQuizIds=new Set(['293','294','295','296','297','297.1','298','299','340','341','342','415','418','419','421','422','430','432','434','437','438','440','448.1','449','450','453','454','455.1','457','460','466','500','501','502','505','511','515','521','522','523','524','525','526','527','528','529','531','532','533']);
+const signs=[...new Map(raw.split('\n').map(line=>{const [id,name,category,extra]=line.split('|');return[id,{id,name,category,extra:extra==='1',svg:`https://sevas.nrw.de/vz/${id}.svg`,quiz:!blockedQuizIds.has(id)}]})).values()];
 const app=document.querySelector('#app');let current='start';let library={query:'',category:'all',extras:true};let session=null;
 const load=key=>JSON.parse(localStorage.getItem(key)||'{}');const save=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
 const stats=()=>load('vzt-stats');const progress=()=>load('vzt-progress');const img=s=>`<img src="${s.svg}" alt="Verkehrszeichen ${s.id}: ${s.name}" loading="lazy">`;
@@ -282,9 +418,10 @@ function card(s){return`<button class="sign-card" data-sign="${s.id}">${img(s)}<
 function detail(id){const s=signs.find(x=>x.id===id);shell(`VZ ${s.id}`,`<div class="detail"><div>${img(s)}</div><div><p><span class="badge ${s.extra?'extra':''}">${s.extra?'Zusatzzeichen':'Hauptzeichen'}</span></p><h2>${esc(s.name)}</h2><dl><dt>Nummer</dt><dd>VZ ${s.id}</dd><dt>Kategorie</dt><dd>${s.category}</dd><dt>Abbildung</dt><dd><a href="${s.svg}" target="_blank" rel="noreferrer">Original-SVG bei SEVAS öffnen</a></dd></dl><button class="button ghost" id="back">Zur Bibliothek</button></div></div>`);document.querySelector('#back').onclick=()=>navigate('bibliothek')}
 function modeStart(mode){const p=progress();const hard=Object.entries(p).filter(([,x])=>x.wrong>=2).map(([id])=>id);shell(mode==='training'?'Training':'Prüfungsmodus',`<p class="lead">${mode==='training'?'Übe ohne Zeitdruck und wiederhole gezielt schwierige Zeichen.':'Eine Prüfung umfasst zehn Fragen und wertet dein Ergebnis direkt aus.'}</p><div class="mode-choice"><button class="card" data-answer="free"><h2>Freie Antwort</h2><p class="muted">Schreibe die VZ-Nummer zum gezeigten Zeichen.</p></button><button class="card" data-answer="choice"><h2>Multiple Choice</h2><p class="muted">Wähle aus vier Antwortmöglichkeiten.</p></button></div><label class="row card"><input id="include-extras" type="checkbox"> Zusatzzeichen einbeziehen <span class="muted">(sonst nur Hauptzeichen)</span></label>${hard.length?`<p><button class="button warn" id="review">${hard.length} schwierige Zeichen wiederholen</button></p>`:''}`);document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>start(mode,b.dataset.answer,false));const r=document.querySelector('#review');if(r)r.onclick=()=>start('training','choice',true)}
 function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
-function start(mode,answer,review){const extras=document.querySelector('#include-extras')?.checked;let pool=signs.filter(s=>extras||!s.extra);if(review){const p=progress();pool=pool.filter(s=>(p[s.id]?.wrong||0)>=2)}session={mode,answer,review,pool:shuffle(pool),index:0,correct:0,total:mode==='pruefung'?10:Math.min(10,pool.length)};question()}
+function start(mode,answer,review){const extras=document.querySelector('#include-extras')?.checked;let pool=signs.filter(s=>s.quiz&&(extras||!s.extra));if(review){const p=progress();pool=pool.filter(s=>(p[s.id]?.wrong||0)>=2)}session={mode,answer,review,pool:shuffle(pool),index:0,correct:0,total:mode==='pruefung'?10:Math.min(10,pool.length)};question()}
 function question(){const q=session.pool[session.index%session.pool.length];const pct=Math.round(session.index/session.total*100);let controls=session.answer==='free'?`<div class="row" style="justify-content:center;margin-top:18px"><input class="answer-input" id="answer" placeholder="VZ-Nummer eingeben, z. B. 205"><button class="button" id="check">Antwort prüfen</button></div>`:`<div class="choice-grid">${shuffle([q,...shuffle(session.pool.filter(x=>x.id!==q.id)).slice(0,3)]).map(s=>`<button class="choice" data-choice="${s.id}"><b>VZ ${s.id}</b><br><small>${esc(s.name)}</small></button>`).join('')}</div>`;shell(session.mode==='training'?'Training':'Prüfung',`<div class="question"><p class="muted">Frage ${session.index+1} von ${session.total}</p><div class="progress"><i style="width:${pct}%"></i></div>${img(q)}<h2>Welche VZ-Nummer gehört zu diesem Zeichen?</h2>${controls}<div id="feedback"></div></div>`);if(session.answer==='free'){document.querySelector('#check').onclick=()=>grade(document.querySelector('#answer').value.trim(),q);document.querySelector('#answer').onkeydown=e=>{if(e.key==='Enter')grade(e.target.value.trim(),q)}}else document.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>grade(b.dataset.choice,q))}
 function grade(value,q){const ok=value.replace(/^VZ\s*/i,'')===q.id;const all=stats();all.correct=(all.correct||0)+(ok?1:0);all.total=(all.total||0)+1;save('vzt-stats',all);const p=progress();p[q.id]||={right:0,wrong:0};p[q.id][ok?'right':'wrong']++;save('vzt-progress',p);session.correct+=ok?1:0;document.querySelectorAll('.choice').forEach(b=>{b.disabled=true;if(b.dataset.choice===q.id)b.classList.add('correct');if(b.dataset.choice===value&&!ok)b.classList.add('wrong')});const f=document.querySelector('#feedback');f.innerHTML=`<div class="feedback"><b>${ok?'Richtig!':'Noch nicht richtig.'}</b> VZ ${q.id} bedeutet: ${esc(q.name)}.</div><button class="button" id="next">${session.index+1===session.total?'Ergebnis anzeigen':'Nächste Frage'}</button>`;document.querySelector('#next').onclick=()=>{session.index++;session.index===session.total?result():question()}}
 function result(){const pct=Math.round(session.correct/session.total*100);shell(session.mode==='pruefung'?'Prüfung beendet':'Training beendet',`<div class="card" style="max-width:620px;margin:auto;text-align:center"><p class="badge">Dein Ergebnis</p><h1>${session.correct} / ${session.total}</h1><p class="lead" style="margin:auto">${pct}% richtig beantwortet.</p><div class="actions" style="justify-content:center"><button class="button" id="again">Noch einmal</button><a class="button ghost" href="#statistik" data-view="statistik">Statistik ansehen</a></div></div>`);document.querySelector('#again').onclick=()=>navigate(session.mode)}
 function statistics(){const s=stats(),p=progress(),hard=Object.entries(p).filter(([,x])=>x.wrong>x.right).sort((a,b)=>b[1].wrong-a[1].wrong);const rate=s.total?Math.round(s.correct/s.total*100):0;shell('Deine Statistik',`<div class="stats"><div class="stat"><b>${s.total||0}</b><span>Antworten</span></div><div class="stat"><b>${rate}%</b><span>Trefferquote</span></div><div class="stat"><b>${hard.length}</b><span>Wiederholungen empfohlen</span></div></div><div class="card" style="margin-top:24px"><h2>Schwierige Zeichen</h2>${hard.length?`<div class="grid">${hard.map(([id,x])=>{const z=signs.find(s=>s.id===id);return`<div class="sign-card">${img(z)}<b>VZ ${id}</b><small>${esc(z.name)}</small><p class="muted">${x.wrong}× falsch · ${x.right}× richtig</p></div>`}).join('')}</div>`:'<p class="empty">Noch keine schwierigen Zeichen. Starte ein Training!</p>'}</div><p><button class="button warn" id="reset">Statistik zurücksetzen</button></p>`);document.querySelector('#reset').onclick=()=>{if(confirm('Statistik und Wiederholungen wirklich zurücksetzen?')){localStorage.removeItem('vzt-stats');localStorage.removeItem('vzt-progress');statistics()}}}
 document.addEventListener('click',e=>{const a=e.target.closest('[data-view]');if(a){e.preventDefault();navigate(a.dataset.view)}});window.addEventListener('hashchange',()=>{const v=location.hash.slice(1)||'start';if(v!==current){current=v;render()}});current=location.hash.slice(1)||'start';render();
+
