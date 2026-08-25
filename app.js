@@ -140,14 +140,8 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 358|Erste Hilfe|Richtzeichen
 363|Polizei|Richtzeichen
 365-50|Fernsprecher|Richtzeichen
-366|Touristischer Hinweis|Richtzeichen
-367|Hinweis auf Autohof|Richtzeichen
-375|Hinweis auf eine Stadt oder ein Stadtviertel|Richtzeichen
-380|Richtgeschwindigkeit|Richtzeichen
-381|Übernachtungsmöglichkeit|Richtzeichen
 385|Parkplatz mit Anschluss an den öffentlichen Personenverkehr|Richtzeichen
 386.1|Touristischer Hinweis|Richtzeichen
-388|Seitenstreifen für mehrspurige Kraftfahrzeuge|Richtzeichen
 390|Mautpflichtige Strecke|Richtzeichen
 391|Mautpflichtige Strecke für Lastkraftwagen|Richtzeichen
 392|Zollstelle|Richtzeichen
@@ -176,7 +170,6 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 457|Umleitungsankündigung|Richtzeichen
 460|Bedarfsumleitung|Richtzeichen
 466|Weiterleitung auf Bedarfsumleitung|Richtzeichen
-500|Überleitungstafel|Verkehrseinrichtung
 501|Überleitungsbake|Verkehrseinrichtung
 600|Absperrschranke|Verkehrseinrichtung
 605|Leitbake|Verkehrseinrichtung
@@ -335,9 +328,7 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 386.2|Touristische Route|Richtzeichen
 386.3|Touristische Unterrichtungstafel|Richtzeichen
 390.2|Ende der Mautpflicht|Richtzeichen
-500|Überleitungstafel|Verkehrseinrichtung
 501|Überleitungsbake|Verkehrseinrichtung
-502|Überleitungstafel mit Gegenverkehr|Verkehrseinrichtung
 605-10|Leitbake – Aufstellung rechts|Verkehrseinrichtung
 605-20|Leitbake – Aufstellung links|Verkehrseinrichtung
 605-40|Leitbake – doppelseitig|Verkehrseinrichtung
