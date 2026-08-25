@@ -187,8 +187,6 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1000-32|Richtung, Ende der Strecke – rechtsweisend|Zusatzzeichen|1
 1000-33|Richtung, Ende der Strecke – linksweisend|Zusatzzeichen|1
 1000-34|Richtung – linksweisend|Zusatzzeichen|1
-1000-35|Richtung – rechtsweisend|Zusatzzeichen|1
-1000-36|Richtung – geradeausweisend|Zusatzzeichen|1
 1001-30|Verlauf der Vorfahrtstraße – abknickende Vorfahrt nach rechts|Zusatzzeichen|1
 1001-31|Verlauf der Vorfahrtstraße – abknickende Vorfahrt nach links|Zusatzzeichen|1
 1002-10|Verlauf einer Vorfahrtstraße an einer Kreuzung – von unten nach links|Zusatzzeichen|1
@@ -214,8 +212,6 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1014-51|Tunnelkategorie C|Zusatzzeichen|1
 1014-52|Tunnelkategorie D|Zusatzzeichen|1
 1014-53|Tunnelkategorie E|Zusatzzeichen|1
-1018-10|Bauarbeiten|Zusatzzeichen|1
-1018-11|Erntemaschinen|Zusatzzeichen|1
 1020-11|Schwerbehinderte mit Parkausweis frei|Zusatzzeichen|1
 1020-12|Radverkehr und Anlieger frei|Zusatzzeichen|1
 1020-13|Inline-Skaten und Rollschuhfahren zugelassen|Zusatzzeichen|1
@@ -236,20 +232,14 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1026-31|Linienverkehr frei|Zusatzzeichen|1
 1028-30|Anlieger frei|Zusatzzeichen|1
 1028-31|Bis Baustelle frei|Zusatzzeichen|1
-1030-10|Elektrokleinstfahrzeuge frei|Zusatzzeichen|1
 1031-50|Kraftfahrzeuge und Züge bis 3,5 t|Zusatzzeichen|1
 1031-51|Kraftfahrzeuge und Züge über 3,5 t|Zusatzzeichen|1
-1032-30|Anwohner frei|Zusatzzeichen|1
-1033-10|Lieferverkehr frei|Zusatzzeichen|1
 1040-30|Zeitliche Beschränkung|Zusatzzeichen|1
 1042-30|Zeitliche Beschränkung|Zusatzzeichen|1
 1044-10|Nur Schwerbehinderte mit außergewöhnlicher Gehbehinderung|Zusatzzeichen|1
 1044-11|Nur Bewohner mit Parkausweis|Zusatzzeichen|1
-1048-10|Nur Kraftomnibusse|Zusatzzeichen|1
-1048-11|Nur Personenkraftwagen|Zusatzzeichen|1
-1048-12|Nur Lastkraftwagen|Zusatzzeichen|1
-1049-10|Nur Personenkraftwagen mit Anhänger|Zusatzzeichen|1
-1049-11|Nur Lastkraftwagen mit Anhänger|Zusatzzeichen|1
+1049-11|Sonstige oder mehrere mehrspurige Fahrzeuge – Überholverbot|Zusatzzeichen|1
+1049-12|Sonstige oder mehrere mehrspurige Fahrzeuge – Sattelzug|Zusatzzeichen|1
 1052-30|Bei Nässe|Zusatzzeichen|1
 1052-31|Bei Glätte|Zusatzzeichen|1
 1053-30|Bei Nebel|Zusatzzeichen|1
@@ -396,7 +386,7 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1012-33|Keine Mofas|Zusatzzeichen|1`;
 const verifiedQuizIds=new Set(`101 101-10 101-11 101-12 110 112 114 117-10 117-20 120 121-10 121-20 123 124 125 131 133-10 133-20 136-10 136-20 138-10 138-20 142-10 142-20 151 156-10 156-20 157-10 157-20 159-10 159-20 201-50 201-51 205 206 208 209 209-10 209-30 211 211-10 214 214-10 214-30 215 220-10 220-20 220-40 222 222-10 224 229 237 238 239 240 241-30 242.1 242.2 244.1 244.2 244.3 244.4 245 250 251 253 254 255 259 260 261 267 268 269 270.1 270.2 272 274 274.1 274.2 275 276 277 278 279 280 281 282 283 286 290.1 290.2 301 306 307 308 310 311 311.1 314 314-10 314-20 314-30 314-31 314-50 314.1 314.2 315 316 317 325.1 325.2 327 330.1 330.2 331.1 331.2 332 333 350 354 356 357 358 363 365-50 365-51 365-52 365-58 365-65 365-66 380 381 385 390 391 392 393 394 401 405 406 410 605-10 605-20 605-40 610 615 616 620 625-10 625-20 626 627 628 629 630 720 721 1010-13 1010-14 1010-15 1010-50 1013-50 1013-51 1013-52 1014-50 1014-51 1014-52 1014-53 1020-11 1020-12 1020-13 1020-30 1020-31 1020-32 1022-10 1022-11 1022-12 1024-10 1024-11 1024-12 1024-13 1024-14 1024-15 1024-17 1024-19 1024-20 1024-21`.split(' '));
 const reportedWithoutStaticSvg=new Set(`108 110 274 278 293 295 297 299 315 340 341 342 350 366 367 375 380 381 388 394 406 415 418 421 422 430 432 434 450 454 455.1 457 460 500 501 600 605 610 615 616 620 625 626 628 1000-35 1000-36 1018-10 1018-11 1020-10 1032-30 1033-10 1048-10 1048-11 1048-12 1049-10 157 159 162 201 223.1 223.2 223.3 241 318 350.1 350.2 502 627 629 630`.split(' '));
-const officialVzKatAssets=new Set(`108 110 201 223.1 223.2 223.3 241 274 278 293 295 297 299 315 318 340 341 342 350 350.1 350.2 394 406 415 418 421 422 430 432 434 450 454 455.1 457 460 501 600 605 610 615 616 620 625 626 627 628 629 630`.split(' '));
+const officialVzKatAssets=new Set(`108 110 201 223.1 223.2 223.3 241 274 278 293 295 297 299 315 318 340 341 342 350 350.1 350.2 394 406 415 418 421 422 430 432 434 450 454 455.1 457 460 501 600 605 610 615 616 620 625 626 627 628 629 630 1049-11 1049-12`.split(' '));
 const imageOverrides={
   '108':'108-10','110':'110-10','274':'274-50','278':'278-50','315':'315-50',
   '350':'350-10','350.1':'350.1-10','350.2':'350.2-10','605':'605-10','625':'625-10',
@@ -423,3 +413,4 @@ function grade(value,q){const ok=value.replace(/^VZ\s*/i,'')===q.id;const all=st
 function result(){const pct=Math.round(session.correct/session.total*100);shell(session.mode==='pruefung'?'Prüfung beendet':'Training beendet',`<div class="card" style="max-width:620px;margin:auto;text-align:center"><p class="badge">Dein Ergebnis</p><h1>${session.correct} / ${session.total}</h1><p class="lead" style="margin:auto">${pct}% richtig beantwortet.</p><div class="actions" style="justify-content:center"><button class="button" id="again">Noch einmal</button><a class="button ghost" href="#statistik" data-view="statistik">Statistik ansehen</a></div></div>`);document.querySelector('#again').onclick=()=>navigate(session.mode)}
 function statistics(){const s=stats(),p=progress(),hard=Object.entries(p).filter(([,x])=>x.wrong>x.right).sort((a,b)=>b[1].wrong-a[1].wrong);const rate=s.total?Math.round(s.correct/s.total*100):0;shell('Deine Statistik',`<div class="stats"><div class="stat"><b>${s.total||0}</b><span>Antworten</span></div><div class="stat"><b>${rate}%</b><span>Trefferquote</span></div><div class="stat"><b>${hard.length}</b><span>Wiederholungen empfohlen</span></div></div><div class="card" style="margin-top:24px"><h2>Schwierige Zeichen</h2>${hard.length?`<div class="grid">${hard.map(([id,x])=>{const z=signs.find(s=>s.id===id);return`<div class="sign-card">${img(z)}<b>VZ ${id}</b><small>${esc(z.name)}</small><p class="muted">${x.wrong}× falsch · ${x.right}× richtig</p></div>`}).join('')}</div>`:'<p class="empty">Noch keine schwierigen Zeichen. Starte ein Training!</p>'}</div><p><button class="button warn" id="reset">Statistik zurücksetzen</button></p>`);document.querySelector('#reset').onclick=()=>{if(confirm('Statistik und Wiederholungen wirklich zurücksetzen?')){localStorage.removeItem('vzt-stats');localStorage.removeItem('vzt-progress');statistics()}}}
 document.addEventListener('click',e=>{const a=e.target.closest('[data-view]');if(a){e.preventDefault();navigate(a.dataset.view)}});window.addEventListener('hashchange',()=>{const v=location.hash.slice(1)||'start';if(v!==current){current=v;render()}});current=location.hash.slice(1)||'start';render();
+
