@@ -65,7 +65,7 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 244.1|Beginn einer Fahrradstraße|Richtzeichen
 244.3|Beginn einer Fahrradzone|Richtzeichen
 244.4|Ende einer Fahrradzone|Richtzeichen
-244.2|Ende einer Fahrradzone|Richtzeichen
+244.2|Ende einer Fahrradstraße|Richtzeichen
 245|Bussonderfahrstreifen|Vorschriftzeichen
 250|Verbot für Fahrzeuge aller Art|Vorschriftzeichen
 251|Verbot für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge|Vorschriftzeichen
