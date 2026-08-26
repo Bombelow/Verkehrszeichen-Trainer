@@ -3,10 +3,10 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 101-10|Flugbetrieb – Aufstellung rechts|Gefahrzeichen
 101-11|Fußgängerüberweg – Aufstellung rechts|Gefahrzeichen
 101-12|Viehtrieb – Aufstellung rechts|Gefahrzeichen
-103-10|Kurve rechts|Gefahrzeichen
-103-20|Kurve links|Gefahrzeichen
-105-10|Doppelkurve – zunächst rechts|Gefahrzeichen
-105-20|Doppelkurve – zunächst links|Gefahrzeichen
+103-10|Kurve – links|Gefahrzeichen
+103-20|Kurve – rechts|Gefahrzeichen
+105-10|Doppelkurve – zunächst links|Gefahrzeichen
+105-20|Doppelkurve – zunächst rechts|Gefahrzeichen
 108|Gefälle|Gefahrzeichen
 110|Steigung|Gefahrzeichen
 112|Unebene Fahrbahn|Gefahrzeichen
@@ -14,8 +14,8 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 117-10|Seitenwind von rechts|Gefahrzeichen
 117-20|Seitenwind von links|Gefahrzeichen
 120|Verengte Fahrbahn|Gefahrzeichen
-121-10|Einseitig verengte Fahrbahn – rechts|Gefahrzeichen
-121-20|Einseitig verengte Fahrbahn – links|Gefahrzeichen
+121-10|Einseitig verengte Fahrbahn – Verengung rechts|Gefahrzeichen
+121-20|Einseitig verengte Fahrbahn – Verengung links|Gefahrzeichen
 123|Arbeitsstelle|Gefahrzeichen
 124|Stau|Gefahrzeichen
 125|Gegenverkehr|Gefahrzeichen
@@ -29,25 +29,25 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 142-10|Wildwechsel – Aufstellung rechts|Gefahrzeichen
 142-20|Wildwechsel – Aufstellung links|Gefahrzeichen
 151|Bahnübergang|Gefahrzeichen
-156-10|Dreistreifige Bake – Aufstellung rechts|Gefahrzeichen
-156-20|Dreistreifige Bake – Aufstellung links|Gefahrzeichen
-157-10|Zweistreifige Bake – Aufstellung rechts|Gefahrzeichen
-157-20|Zweistreifige Bake – Aufstellung links|Gefahrzeichen
-159-10|Einstreifige Bake – Aufstellung rechts|Gefahrzeichen
-159-20|Einstreifige Bake – Aufstellung links|Gefahrzeichen
+156-10|Bahnübergang mit dreistreifiger Bake – Aufstellung rechts|Gefahrzeichen
+156-20|Bahnübergang mit dreistreifiger Bake – Aufstellung links|Gefahrzeichen
+157-10|Dreistreifige Bake – Aufstellung rechts|Gefahrzeichen
+157-20|Dreistreifige Bake – Aufstellung links|Gefahrzeichen
+159-10|Zweistreifige Bake – Aufstellung rechts|Gefahrzeichen
+159-20|Zweistreifige Bake – Aufstellung links|Gefahrzeichen
 201-50|Andreaskreuz – stehend|Vorrangzeichen
-201-51|Andreaskreuz – liegend|Vorrangzeichen
+201-51|Andreaskreuz – stehend mit Blitzpfeil|Vorrangzeichen
 205|Vorfahrt gewähren|Vorrangzeichen
-206|Halt. Vorfahrt gewähren.|Vorrangzeichen
+206|Halt. Vorfahrt gewähren|Vorrangzeichen
 208|Vorrang des Gegenverkehrs|Vorrangzeichen
 209|Vorgeschriebene Fahrtrichtung – rechts|Vorschriftzeichen
 209-10|Vorgeschriebene Fahrtrichtung – links|Vorschriftzeichen
 209-30|Vorgeschriebene Fahrtrichtung – geradeaus|Vorschriftzeichen
 211|Vorgeschriebene Fahrtrichtung – hier rechts|Vorschriftzeichen
 211-10|Vorgeschriebene Fahrtrichtung – hier links|Vorschriftzeichen
-214|Geradeaus oder rechts|Vorschriftzeichen
-214-10|Geradeaus oder links|Vorschriftzeichen
-214-30|Rechts oder links|Vorschriftzeichen
+214|Vorgeschriebene Fahrtrichtung – geradeaus oder rechts|Vorschriftzeichen
+214-10|Vorgeschriebene Fahrtrichtung – geradeaus oder links|Vorschriftzeichen
+214-30|Vorgeschriebene Fahrtrichtung – rechts oder links|Vorschriftzeichen
 215|Kreisverkehr|Vorschriftzeichen
 220-10|Einbahnstraße – linksweisend|Richtzeichen
 220-20|Einbahnstraße – rechtsweisend|Richtzeichen
@@ -59,7 +59,7 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 238|Reitweg|Vorschriftzeichen
 239|Gehweg|Vorschriftzeichen
 240|Gemeinsamer Geh- und Radweg|Vorschriftzeichen
-241-30|Getrennter Rad- und Gehweg – Radverkehr links|Vorschriftzeichen
+241-30|Getrennter Rad- und Gehweg – Radweg links|Vorschriftzeichen
 242.1|Beginn einer Fußgängerzone|Richtzeichen
 242.2|Ende einer Fußgängerzone|Richtzeichen
 244.1|Beginn einer Fahrradstraße|Richtzeichen
@@ -68,40 +68,40 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 244.2|Ende einer Fahrradstraße|Richtzeichen
 245|Bussonderfahrstreifen|Vorschriftzeichen
 250|Verbot für Fahrzeuge aller Art|Vorschriftzeichen
-251|Verbot für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge|Vorschriftzeichen
+251|Verbot für Kraftwagen|Vorschriftzeichen
 253|Verbot für Kraftfahrzeuge über 3,5 t|Vorschriftzeichen
 254|Verbot für Radverkehr|Vorschriftzeichen
-255|Verbot für Krafträder mit Beiwagen, Kleinkrafträder und Mofas|Vorschriftzeichen
+255|Verbot für Krafträder|Vorschriftzeichen
 259|Verbot für Fußgänger|Vorschriftzeichen
 260|Verbot für Kraftfahrzeuge|Vorschriftzeichen
 261|Verbot für kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern|Vorschriftzeichen
-262|Verbot für Fahrzeuge über angegebene tatsächliche Masse|Vorschriftzeichen
-263|Verbot für Fahrzeuge über angegebene tatsächliche Achslast|Vorschriftzeichen
-264|Verbot für Fahrzeuge über angegebene tatsächliche Breite|Vorschriftzeichen
-265|Verbot für Fahrzeuge über angegebene tatsächliche Höhe|Vorschriftzeichen
-266|Verbot für Fahrzeuge über angegebene tatsächliche Länge|Vorschriftzeichen
+262|Tatsächliche Masse (Unternummer steht jeweils für den Zahlenwert)|Vorschriftzeichen
+263|Tatsächliche Achslast (Unternummer steht jeweils für den Zahlenwert)|Vorschriftzeichen
+264|Tatsächliche Breite (Unternummer steht jeweils für den Zahlenwert)|Vorschriftzeichen
+265|Tatsächliche Höhe (Unternummer steht jeweils für den Zahlenwert)|Vorschriftzeichen
+266|Tatsächliche Länge (Unternummer steht jeweils für den Zahlenwert)|Vorschriftzeichen
 267|Verbot der Einfahrt|Vorschriftzeichen
 268|Schneeketten vorgeschrieben|Vorschriftzeichen
 269|Verbot für Fahrzeuge mit wassergefährdender Ladung|Vorschriftzeichen
-270.1|Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen|Richtzeichen
-270.2|Ende einer Verkehrsverbotszone|Richtzeichen
+270.1|Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone|Richtzeichen
+270.2|Ende einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone|Richtzeichen
 272|Verbot des Wendens|Vorschriftzeichen
-273|Verbot des Unterschreitens des Mindestabstandes|Vorschriftzeichen
+273|Verbot des Unterschreitens des angegebenen Mindestabstandes (Unternummer steht jeweils für den Zahlenwert)|Vorschriftzeichen
 274|Zulässige Höchstgeschwindigkeit|Vorschriftzeichen
-274.1|Beginn einer Tempo-30-Zone|Richtzeichen
-274.2|Ende einer Tempo-30-Zone|Richtzeichen
-275|Vorgeschriebene Mindestgeschwindigkeit|Vorschriftzeichen
+274.1|Beginn einer Tempo 30-Zone|Richtzeichen
+274.2|Ende einer Tempo 30-Zone|Richtzeichen
+275|Vorgeschriebene Mindestgeschwindigkeit (Unternummer (nur volle Zehner) steht jeweils für den Zahlenwert)|Vorschriftzeichen
 276|Überholverbot für Kraftfahrzeuge aller Art|Vorschriftzeichen
 277|Überholverbot für Kraftfahrzeuge über 3,5 t|Vorschriftzeichen
 278|Ende der zulässigen Höchstgeschwindigkeit|Vorschriftzeichen
-279|Ende der vorgeschriebenen Mindestgeschwindigkeit|Vorschriftzeichen
-280|Ende des Überholverbotes für Kraftfahrzeuge aller Art|Vorschriftzeichen
-281|Ende des Überholverbotes für Kraftfahrzeuge über 3,5 t|Vorschriftzeichen
-282|Ende sämtlicher Streckenverbote|Vorschriftzeichen
+279|Ende der vorgeschriebenen Mindestgeschwindigkeit (Unternummer (nur volle Zehner) steht jeweils für den Zahlenwert)|Vorschriftzeichen
+280|Ende des Überholverbots für Kraftfahrzeuge aller Art|Vorschriftzeichen
+281|Ende des Überholverbots für Kraftfahrzeuge über 3,5 t|Vorschriftzeichen
+282|Ende sämtlicher streckenbezogener Geschwindigkeitsbeschränkungen und Überholverbote|Vorschriftzeichen
 283|Absolutes Haltverbot|Vorschriftzeichen
 286|Eingeschränktes Haltverbot|Vorschriftzeichen
-290.1|Beginn eines eingeschränkten Haltverbots für eine Zone|Richtzeichen
-290.2|Ende eines eingeschränkten Haltverbots für eine Zone|Richtzeichen
+290.1|Beginn eines eingeschränkten Haltverbotes für eine Zone|Richtzeichen
+290.2|Ende eines eingeschränkten Haltverbotes für eine Zone|Richtzeichen
 293|Fußgängerüberweg|Markierung
 295|Fahrstreifenbegrenzung und Fahrbahnbegrenzung|Markierung
 297|Pfeilmarkierungen|Markierung
@@ -110,12 +110,12 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 306|Vorfahrtstraße|Vorrangzeichen
 307|Ende der Vorfahrtstraße|Vorrangzeichen
 308|Vorrang vor dem Gegenverkehr|Vorrangzeichen
-310|Ortstafel – Vorderseite|Richtzeichen
-311|Ortstafel – Rückseite|Richtzeichen
+310|Ortstafel Vorderseite|Richtzeichen
+311|Ortstafel Rückseite|Richtzeichen
 314|Parken|Richtzeichen
-314-10|Parken – Anfang oder Ende|Richtzeichen
-314-20|Parken – Ende oder Anfang|Richtzeichen
-314-30|Parken – Mitte|Richtzeichen
+314-10|Parken – Anfang (Aufstellung rechts) oder Ende (Aufstellung links)|Richtzeichen
+314-20|Parken – Ende (Aufstellung rechts) oder Anfang (Aufstellung links)|Richtzeichen
+314-30|Parken – Mitte (Aufstellung rechts)|Richtzeichen
 314.1|Beginn einer Parkraumbewirtschaftungszone|Richtzeichen
 314.2|Ende einer Parkraumbewirtschaftungszone|Richtzeichen
 315|Parken auf Gehwegen|Richtzeichen
@@ -128,8 +128,8 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 330.2|Ende der Autobahn|Richtzeichen
 331.1|Kraftfahrstraße|Richtzeichen
 331.2|Ende der Kraftfahrstraße|Richtzeichen
-332|Ausfahrt von der Autobahn|Richtzeichen
-333|Ausfahrt von der Kraftfahrstraße|Richtzeichen
+332|Ausfahrttafel auf der Autobahn|Richtzeichen
+333|Ausfahrt von der Autobahn|Richtzeichen
 340|Leitlinie|Markierung
 341|Wartelinie|Markierung
 342|Haifischzähne|Markierung
@@ -140,37 +140,37 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 358|Erste Hilfe|Richtzeichen
 363|Polizei|Richtzeichen
 365-50|Fernsprecher|Richtzeichen
-385|Parkplatz mit Anschluss an den öffentlichen Personenverkehr|Richtzeichen
+385|Ortshinweistafel|Richtzeichen
 386.1|Touristischer Hinweis|Richtzeichen
-390|Mautpflichtige Strecke|Richtzeichen
-391|Mautpflichtige Strecke für Lastkraftwagen|Richtzeichen
+390|Mautpflicht nach dem Bundesfernstraßenmautgesetz|Richtzeichen
+391|Mautpflichtige Strecke|Richtzeichen
 392|Zollstelle|Richtzeichen
 393|Informationstafel an Grenzübergangsstellen|Richtzeichen
 394|Laternenring|Richtzeichen
-401|Bundesstraße|Richtzeichen
-405|Autobahnnummer|Richtzeichen
-406|Knotenpunkt auf Autobahnen|Richtzeichen
-410|Europastraße|Richtzeichen
+401|Bundesstraßen|Richtzeichen
+405|Autobahnen|Richtzeichen
+406|Knotenpunkte der Autobahnen|Richtzeichen
+410|Europastraßen|Richtzeichen
 415|Pfeilwegweiser auf Bundesstraßen|Richtzeichen
 418|Pfeilwegweiser auf sonstigen Straßen|Richtzeichen
-421|Pfeilwegweiser auf Autobahnen|Richtzeichen
+421|Pfeilwegweiser für bestimmte Verkehrsarten|Richtzeichen
 422|Wegweiser für bestimmte Verkehrsarten|Richtzeichen
-430|Wegweiser zur Autobahn|Richtzeichen
-432|Wegweiser zu innerörtlichen Zielen und zu Einrichtungen|Richtzeichen
-434|Tabellenwegweiser auf Autobahnen|Richtzeichen
-437|Straßennummernschild|Richtzeichen
+430|Pfeilwegweiser zur Autobahn|Richtzeichen
+432|Pfeilwegweiser zu Zielen mit erheblicher Verkehrsbedeutung|Richtzeichen
+434|Tabellenwegweiser|Richtzeichen
+437|Straßennamensschild|Richtzeichen
 438|Vorwegweiser außerhalb von Autobahnen|Richtzeichen
 440|Vorwegweiser zur Autobahn|Richtzeichen
-448.1|Ankündigung oder Fortsetzung der streckenbezogenen Leistungsfähigkeit|Richtzeichen
+448.1|Autohof|Richtzeichen
 449|Vorwegweiser auf Autobahnen|Richtzeichen
 450|Ankündigungsbake|Richtzeichen
-453|Entfernungstafel auf Autobahnen|Richtzeichen
-454|Entfernungstafel auf anderen Straßen|Richtzeichen
-455.1|Ankündigung einer Anschlussstelle|Richtzeichen
+453|Entfernungstafel|Richtzeichen
+454|Umleitungswegweiser|Richtzeichen
+455.1|Ankündigung oder Fortsetzung der Umleitung|Richtzeichen
 457|Umleitungsankündigung|Richtzeichen
 460|Bedarfsumleitung|Richtzeichen
-466|Weiterleitung auf Bedarfsumleitung|Richtzeichen
-501|Überleitungsbake|Verkehrseinrichtung
+466|Weiterführende Bedarfsumleitung|Richtzeichen
+501|Überleitungstafel – ohne Gegenverkehr|Verkehrseinrichtung
 600|Absperrschranke|Verkehrseinrichtung
 605|Leitbake|Verkehrseinrichtung
 610|Leitkegel|Verkehrseinrichtung
@@ -178,80 +178,80 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 616|Fahrbare Absperrtafel mit Blinkpfeil|Verkehrseinrichtung
 620|Leitpfosten|Verkehrseinrichtung
 625|Richtungstafel in Kurven|Verkehrseinrichtung
-626|Leitmal|Verkehrseinrichtung
-628|Leitplatte|Verkehrseinrichtung
-720|Grünpfeil|Lichtzeichen
-721|Grünpfeil mit Lichtzeichen|Lichtzeichen
-1000-30|Richtung, Anfang der Strecke – rechtsweisend|Zusatzzeichen|1
-1000-31|Richtung, Anfang der Strecke – linksweisend|Zusatzzeichen|1
-1000-32|Richtung, Ende der Strecke – rechtsweisend|Zusatzzeichen|1
+626|Leitplatte|Verkehrseinrichtung
+628|Leitschwelle mit Leitbake (Z 605)|Verkehrseinrichtung
+720|Grünpfeilschild|Lichtzeichen
+721|Grünpfeilschild mit Beschränkung auf den Radverkehr|Lichtzeichen
+1000-30|Beide Richtungen, zwei gegengerichtete waagerechte Pfeile|Zusatzzeichen|1
+1000-31|Beide Richtungen, zwei gegengerichtete senkrechte Pfeile|Zusatzzeichen|1
+1000-32|Radverkehr kreuzt von links und rechts oder Radverkehr ist in der Gegenrichtung zugelassen|Zusatzzeichen|1
 1000-33|Richtung, Ende der Strecke – linksweisend|Zusatzzeichen|1
-1000-34|Richtung – linksweisend|Zusatzzeichen|1
-1001-30|Verlauf der Vorfahrtstraße – abknickende Vorfahrt nach rechts|Zusatzzeichen|1
-1001-31|Verlauf der Vorfahrtstraße – abknickende Vorfahrt nach links|Zusatzzeichen|1
-1002-10|Verlauf einer Vorfahrtstraße an einer Kreuzung – von unten nach links|Zusatzzeichen|1
-1004-30|Entfernung – 100 m|Zusatzzeichen|1
-1004-31|Entfernung – 200 m|Zusatzzeichen|1
-1004-32|Entfernung – 400 m|Zusatzzeichen|1
-1005-30|Entfernung – 100 m|Zusatzzeichen|1
-1006-30|Gefahrstelle – 1 km|Zusatzzeichen|1
+1000-34|Umleitungsbeschilderung Halbkreis|Zusatzzeichen|1
+1001-30|Auf ... m (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1001-31|Auf ... km (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1002-10|Verlauf der Vorfahrtstraße an Kreuzungen – von unten nach links|Zusatzzeichen|1
+1004-30|Entfernungsangabe in m (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1004-31|Entfernungsangabe in km (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1004-32|Stop in 100 m|Zusatzzeichen|1
+1005-30|Reißverschluss erst in ... m (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1006-30|Schleudergefahr für Wohnwagengespanne an Gefällestrecken mit starkem Seitenwind auf Autobahnen|Zusatzzeichen|1
 1007-30|Ölspur|Zusatzzeichen|1
-1008-30|Vorrangstraße|Zusatzzeichen|1
-1008-31|Vorfahrt geändert|Zusatzzeichen|1
-1010-10|Kraftfahrzeuge und Züge|Zusatzzeichen|1
-1010-11|Personenkraftwagen|Zusatzzeichen|1
-1010-12|Krafträder, auch mit Beiwagen|Zusatzzeichen|1
-1010-13|Wohnwagen|Zusatzzeichen|1
+1008-30|Vorfahrt geändert|Zusatzzeichen|1
+1008-31|Verkehrsführung geändert|Zusatzzeichen|1
+1010-10|Erlaubt Kindern auch auf der Fahrbahn und dem Seitenstreifen zu spielen|Zusatzzeichen|1
+1010-11|Wintersport erlaubt|Zusatzzeichen|1
+1010-12|Kennzeichnung von Parkflächen, auf denen Anhänger auch länger als 14 Tage parken dürfen|Zusatzzeichen|1
+1010-13|Kennzeichnung von Parkflächen, auf denen Wohnwagen auch länger als 14 Tage parken dürfen|Zusatzzeichen|1
 1010-50|Kraftwagen und sonstige mehrspurige Fahrzeuge|Zusatzzeichen|1
-1012-30|Ende|Zusatzzeichen|1
-1012-31|Ende einer Umleitung|Zusatzzeichen|1
-1013-50|Schneeflocke|Zusatzzeichen|1
-1013-51|Nässe|Zusatzzeichen|1
-1013-52|Bei Glätte|Zusatzzeichen|1
-1014-50|Tunnelkategorie B|Zusatzzeichen|1
-1014-51|Tunnelkategorie C|Zusatzzeichen|1
-1014-52|Tunnelkategorie D|Zusatzzeichen|1
-1014-53|Tunnelkategorie E|Zusatzzeichen|1
-1020-11|Schwerbehinderte mit Parkausweis frei|Zusatzzeichen|1
+1012-30|Ladezone|Zusatzzeichen|1
+1012-31|Ende|Zusatzzeichen|1
+1013-50|Seitenstreifen befahren|Zusatzzeichen|1
+1013-51|Seitenstreifen räumen|Zusatzzeichen|1
+1013-52|Ende in ... m (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1014-50|Tunnelkategorie gemäß ADR-Übereinkommen – B|Zusatzzeichen|1
+1014-51|Tunnelkategorie gemäß ADR-Übereinkommen – C|Zusatzzeichen|1
+1014-52|Tunnelkategorie gemäß ADR-Übereinkommen – D|Zusatzzeichen|1
+1014-53|Tunnelkategorie gemäß ADR-Übereinkommen – E|Zusatzzeichen|1
+1020-11|Schwerbehinderte mit Parkausweis Nr. ... frei|Zusatzzeichen|1
 1020-12|Radverkehr und Anlieger frei|Zusatzzeichen|1
 1020-13|Inline-Skaten und Rollschuhfahren zugelassen|Zusatzzeichen|1
 1020-30|Anlieger frei|Zusatzzeichen|1
 1020-31|Anlieger oder Parken frei|Zusatzzeichen|1
-1020-32|Bewohner mit Parkausweis frei|Zusatzzeichen|1
+1020-32|Bewohner mit Parkausweis Nr. ... frei|Zusatzzeichen|1
 1022-10|Radverkehr frei|Zusatzzeichen|1
 1022-11|Mofas frei|Zusatzzeichen|1
-1022-12|Krafträder und Mofas frei|Zusatzzeichen|1
+1022-12|Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas frei|Zusatzzeichen|1
 1024-10|Personenkraftwagen frei|Zusatzzeichen|1
-1024-11|Lastkraftwagen frei|Zusatzzeichen|1
-1024-12|Lastkraftwagen mit Anhänger frei|Zusatzzeichen|1
-1024-13|Kraftomnibus frei|Zusatzzeichen|1
-1024-14|Schienenbahn frei|Zusatzzeichen|1
-1024-15|Straßenbahn frei|Zusatzzeichen|1
-1024-17|Kraftfahrzeuge bis 25 km/h frei|Zusatzzeichen|1
-1026-30|Taxen frei|Zusatzzeichen|1
-1026-31|Linienverkehr frei|Zusatzzeichen|1
-1028-30|Anlieger frei|Zusatzzeichen|1
+1024-11|Personenkraftwagen mit Anhänger frei|Zusatzzeichen|1
+1024-12|Kraftfahrzeuge mit einer zulässigen Gesamtmasse über 3,5 t, einschließlich ihrer Anhänger, und Zugmaschinen, ausgenommen Personenkraftwagen und Kraftomnibusse frei|Zusatzzeichen|1
+1024-13|Lastkraftwagen mit Anhänger frei|Zusatzzeichen|1
+1024-14|Kraftomnibus frei|Zusatzzeichen|1
+1024-15|Schienenbahn frei|Zusatzzeichen|1
+1024-17|Kraftfahrzeuge und Züge, die nicht schneller als 25 km/h fahren können oder dürfen frei|Zusatzzeichen|1
+1026-30|Taxi frei|Zusatzzeichen|1
+1026-31|Kraftomnibusse im Gelegenheitsverkehr frei|Zusatzzeichen|1
+1028-30|Baustellenfahrzeuge frei|Zusatzzeichen|1
 1028-31|Bis Baustelle frei|Zusatzzeichen|1
-1031-50|Kraftfahrzeuge und Züge bis 3,5 t|Zusatzzeichen|1
-1031-51|Kraftfahrzeuge und Züge über 3,5 t|Zusatzzeichen|1
-1040-30|Zeitliche Beschränkung|Zusatzzeichen|1
-1042-30|Zeitliche Beschränkung|Zusatzzeichen|1
-1044-10|Nur Schwerbehinderte mit außergewöhnlicher Gehbehinderung|Zusatzzeichen|1
-1044-11|Nur Bewohner mit Parkausweis|Zusatzzeichen|1
-1049-11|Sonstige oder mehrere mehrspurige Fahrzeuge – Überholverbot|Zusatzzeichen|1
-1049-12|Sonstige oder mehrere mehrspurige Fahrzeuge – Sattelzug|Zusatzzeichen|1
-1052-30|Bei Nässe|Zusatzzeichen|1
-1052-31|Bei Glätte|Zusatzzeichen|1
-1053-30|Bei Nebel|Zusatzzeichen|1
-1053-31|Bei Smog|Zusatzzeichen|1
-1053-32|Bei Schneefall|Zusatzzeichen|1
-1053-33|Bei Regen|Zusatzzeichen|1
-1053-34|Bei Schnee- oder Eisglätte|Zusatzzeichen|1
-1053-35|Bei Schneeglätte|Zusatzzeichen|1
-1053-36|Bei Eisglätte|Zusatzzeichen|1
-1053-37|Bei Nässe und Schmutz|Zusatzzeichen|1
-1053-38|Bei Schnee- und Eisglätte|Zusatzzeichen|1
-1053-39|Bei Reif- und Eisglätte|Zusatzzeichen|1
+1031-50|Freistellung vom Verkehrsverbot nach § 40 Absatz 1 BImSchG – rote, gelbe und grüne Plakette|Zusatzzeichen|1
+1031-51|Freistellung vom Verkehrsverbot nach § 40 Absatz 1 BImSchG – gelbe und grüne Plakette|Zusatzzeichen|1
+1040-30|Zeitliche Beschränkung (16 – 18 h)|Zusatzzeichen|1
+1042-30|Zeitliche Beschränkung (werktags)|Zusatzzeichen|1
+1044-10|Nur Schwerbehinderte mit außergewöhnlicher Gehbehinderung und Blinde|Zusatzzeichen|1
+1044-11|Nur Schwerbehinderte mit Parkausweis Nr. ...|Zusatzzeichen|1
+1049-11|Kraftfahrzeuge und Züge, die nicht schneller als 25 km/h fahren können oder dürfen, dürfen überholt werden|Zusatzzeichen|1
+1049-12|Nur militärische Kettenfahrzeuge|Zusatzzeichen|1
+1052-30|Nur kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern|Zusatzzeichen|1
+1052-31|Nur Fahrzeuge mit wassergefährdender Ladung|Zusatzzeichen|1
+1053-30|Parken in gekennzeichneten Flächen erlaubt|Zusatzzeichen|1
+1053-31|Mit Parkschein|Zusatzzeichen|1
+1053-32|Gebührenpflichtig|Zusatzzeichen|1
+1053-33|Massenangabe – 7,5 t|Zusatzzeichen|1
+1053-34|Auf dem Seitenstreifen|Zusatzzeichen|1
+1053-35|Bei Nässe|Zusatzzeichen|1
+1053-36|Durchgangsverkehr|Zusatzzeichen|1
+1053-37|Massenangabe – 12 t|Zusatzzeichen|1
+1053-38|Querparken als Sinnbild|Zusatzzeichen|1
+1053-39|Schrägparken als Sinnbild|Zusatzzeichen|1
 101-13|Reiter – Aufstellung rechts|Gefahrzeichen
 101-14|Amphibienwanderung – Aufstellung rechts|Gefahrzeichen
 101-15|Steinschlag – Aufstellung rechts|Gefahrzeichen
@@ -267,14 +267,14 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 101-54|Unzureichendes Lichtraumprofil|Gefahrzeichen
 101-55|Bewegliche Brücke|Gefahrzeichen
 102|Kreuzung oder Einmündung|Gefahrzeichen
-156-11|Bahnübergang mit dreistreifiger Bake und Entfernungsangabe – rechts|Gefahrzeichen
-156-21|Bahnübergang mit dreistreifiger Bake und Entfernungsangabe – links|Gefahrzeichen
+156-11|Bahnübergang mit dreistreifiger Bake mit Entfernungsangabe – Aufstellung rechts|Gefahrzeichen
+156-21|Bahnübergang mit dreistreifiger Bake mit Entfernungsangabe – Aufstellung links|Gefahrzeichen
 157|Dreistreifige Bake|Gefahrzeichen
-157-11|Dreistreifige Bake mit Entfernungsangabe – rechts|Gefahrzeichen
-157-21|Dreistreifige Bake mit Entfernungsangabe – links|Gefahrzeichen
+157-11|Dreistreifige Bake mit Entfernungsangabe – Aufstellung rechts|Gefahrzeichen
+157-21|Dreistreifige Bake mit Entfernungsangabe – Aufstellung links|Gefahrzeichen
 159|Zweistreifige Bake|Gefahrzeichen
-159-11|Zweistreifige Bake mit Entfernungsangabe – rechts|Gefahrzeichen
-159-21|Zweistreifige Bake mit Entfernungsangabe – links|Gefahrzeichen
+159-11|Zweistreifige Bake mit Entfernungsangabe – Aufstellung rechts|Gefahrzeichen
+159-21|Zweistreifige Bake mit Entfernungsangabe – Aufstellung links|Gefahrzeichen
 162|Einstreifige Bake|Gefahrzeichen
 162-10|Einstreifige Bake – Aufstellung rechts|Gefahrzeichen
 162-20|Einstreifige Bake – Aufstellung links|Gefahrzeichen
@@ -282,13 +282,13 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 201-51|Andreaskreuz – stehend mit Blitzpfeil|Vorschriftzeichen
 201-52|Andreaskreuz – liegend|Vorschriftzeichen
 201-53|Andreaskreuz – liegend mit Blitzpfeil|Vorschriftzeichen
-220-40|Einbahnstraße – doppelseitig|Richtzeichen
+220-40|Einbahnstraße – doppelseitig (-10/-20)|Richtzeichen
 223.1|Seitenstreifen befahren|Vorschriftzeichen
 223.2|Seitenstreifen nicht mehr befahren|Vorschriftzeichen
 223.3|Seitenstreifen räumen|Vorschriftzeichen
 230|Ladebereich|Vorschriftzeichen
-230-10|Ladebereich – Anfang rechts|Vorschriftzeichen
-230-20|Ladebereich – Ende rechts|Vorschriftzeichen
+230-10|Ladebereich – Anfang – Aufstellung rechts|Vorschriftzeichen
+230-20|Ladebereich – Ende – Aufstellung rechts|Vorschriftzeichen
 241|Getrennter Rad- und Gehweg|Vorschriftzeichen
 257-50|Verbot für Mofas|Vorschriftzeichen
 257-51|Verbot für Reiter|Vorschriftzeichen
@@ -298,18 +298,18 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 257-55|Verbot für Personenkraftwagen|Vorschriftzeichen
 257-56|Verbot für Personenkraftwagen mit Anhänger|Vorschriftzeichen
 257-57|Verbot für Lastkraftwagen mit Anhänger|Vorschriftzeichen
-257-58|Verbot für Fahrzeuge bis 25 km/h|Vorschriftzeichen
-257-59|Verbot für Elektrokleinstfahrzeuge|Vorschriftzeichen
-277.1|Überholverbot von einspurigen Fahrzeugen|Vorschriftzeichen
-281.1|Ende des Überholverbots von einspurigen Fahrzeugen|Vorschriftzeichen
+257-58|Verbot für Kraftfahrzeuge und Züge, die nicht schneller als 25 km/h fahren können oder dürfen|Vorschriftzeichen
+257-59|Verbot für Elektrokleinstfahrzeuge im Sinne der Elektrokleinstfahrzeuge-Verordnung (eKFV)|Vorschriftzeichen
+277.1|Verbot des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen|Vorschriftzeichen
+281.1|Ende des Verbots des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen|Vorschriftzeichen
 314-50|Parkhaus, Parkgarage|Richtzeichen
 318|Parkscheibe|Richtzeichen
 328|Nothalte- und Pannenbucht|Richtzeichen
 350.1|Radschnellweg|Richtzeichen
 350.2|Ende des Radschnellwegs|Richtzeichen
-357-50|Sackgasse – für Radverkehr und Fußgänger durchlässig|Richtzeichen
-357-51|Sackgasse – für Fußgänger durchlässig|Richtzeichen
-357-52|Sackgasse – für Radverkehr durchlässig|Richtzeichen
+357-50|Sackgasse – für Radverkehr und Fußgänger durchlässige Sackgasse|Richtzeichen
+357-51|Sackgasse – für Fußgänger durchlässige Sackgasse|Richtzeichen
+357-52|Sackgasse – für Radverkehr durchlässige Sackgasse|Richtzeichen
 365-51|Notrufsäule|Richtzeichen
 365-52|Tankstelle|Richtzeichen
 365-58|Toilette|Richtzeichen
@@ -317,39 +317,39 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 365-66|Wasserstofftankstelle|Richtzeichen
 386.2|Touristische Route|Richtzeichen
 386.3|Touristische Unterrichtungstafel|Richtzeichen
-390.2|Ende der Mautpflicht|Richtzeichen
-501|Überleitungsbake|Verkehrseinrichtung
-605-10|Leitbake – Aufstellung rechts|Verkehrseinrichtung
-605-20|Leitbake – Aufstellung links|Verkehrseinrichtung
-605-40|Leitbake – doppelseitig|Verkehrseinrichtung
+390.2|Ende der Mautpflicht nach dem Bundesfernstraßenmautgesetz|Richtzeichen
+501|Überleitungstafel – ohne Gegenverkehr|Verkehrseinrichtung
+605-10|Leitbake – Schraffenbake – Aufstellung rechts|Verkehrseinrichtung
+605-20|Leitbake – Schraffenbake – Aufstellung links|Verkehrseinrichtung
+605-40|Leitbake – Schraffenbake – doppelseitig (-10/-20)|Verkehrseinrichtung
 610|Leitkegel|Verkehrseinrichtung
 615|Fahrbare Absperrtafel|Verkehrseinrichtung
 616|Fahrbare Absperrtafel mit Blinkpfeil|Verkehrseinrichtung
-625-10|Richtungstafel in Kurven – linksweisend|Verkehrseinrichtung
-625-20|Richtungstafel in Kurven – rechtsweisend|Verkehrseinrichtung
+625-10|Richtungstafel in Kurven – linksweisend: 500 x 500|Verkehrseinrichtung
+625-20|Richtungstafel in Kurven – rechtsweisend: 500 x 500|Verkehrseinrichtung
 626|Leitplatte|Verkehrseinrichtung
 627|Leitmal|Verkehrseinrichtung
-628|Leitschwelle mit Leitbake|Verkehrseinrichtung
+628|Leitschwelle mit Leitbake (Z 605)|Verkehrseinrichtung
 629|Leitbord mit Leitbake|Verkehrseinrichtung
 630|Parkwarntafel|Verkehrseinrichtung
 1000-10|Richtung, linksweisend|Zusatzzeichen|1
 1000-11|Vorankündigung, linksweisend|Zusatzzeichen|1
 1000-20|Richtung, rechtsweisend|Zusatzzeichen|1
 1000-21|Vorankündigung, rechtsweisend|Zusatzzeichen|1
-1000-32|Radverkehr kreuzt von links und rechts|Zusatzzeichen|1
-1001-30|Auf … m|Zusatzzeichen|1
-1001-31|Auf … km|Zusatzzeichen|1
-1001-32|Noch … m|Zusatzzeichen|1
-1001-33|Noch … km|Zusatzzeichen|1
+1000-32|Radverkehr kreuzt von links und rechts oder Radverkehr ist in der Gegenrichtung zugelassen|Zusatzzeichen|1
+1001-30|Auf ... m (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1001-31|Auf ... km (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1001-32|noch ... m (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
+1001-33|noch ... km (zweiter Teil der Unternummer steht jeweils für den Zahlenwert)|Zusatzzeichen|1
 1002-11|Verlauf der Vorfahrtstraße an Kreuzungen – von oben nach links|Zusatzzeichen|1
-1002-12|Verlauf der Vorfahrtstraße – Einmündung von oben|Zusatzzeichen|1
-1002-13|Verlauf der Vorfahrtstraße – Einmündung von rechts|Zusatzzeichen|1
+1002-12|Verlauf der Vorfahrtstraße an Einmündungen – von unten nach links, Einmündung von oben|Zusatzzeichen|1
+1002-13|Verlauf der Vorfahrtstraße an Einmündungen – von unten nach links, Einmündung von rechts|Zusatzzeichen|1
 1002-20|Verlauf der Vorfahrtstraße an Kreuzungen – von unten nach rechts|Zusatzzeichen|1
 1002-21|Verlauf der Vorfahrtstraße an Kreuzungen – von oben nach rechts|Zusatzzeichen|1
 1004-32|Stop in 100 m|Zusatzzeichen|1
-1006-30|Schleudergefahr für Wohnwagengespanne|Zusatzzeichen|1
+1006-30|Schleudergefahr für Wohnwagengespanne an Gefällestrecken mit starkem Seitenwind auf Autobahnen|Zusatzzeichen|1
 1006-31|Unfallgefahr|Zusatzzeichen|1
-1006-32|Unfallgefahr LKW|Zusatzzeichen|1
+1006-32|Unfallgefahr Lkw|Zusatzzeichen|1
 1007-31|Rauch|Zusatzzeichen|1
 1007-32|Rollsplitt|Zusatzzeichen|1
 1007-33|Baustellenausfahrt|Zusatzzeichen|1
@@ -361,7 +361,7 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1007-61|Nebel|Zusatzzeichen|1
 1008-30|Vorfahrt geändert|Zusatzzeichen|1
 1008-31|Verkehrsführung geändert|Zusatzzeichen|1
-1010-12|Parkflächen für Anhänger auch länger als 14 Tage|Zusatzzeichen|1
+1010-12|Kennzeichnung von Parkflächen, auf denen Anhänger auch länger als 14 Tage parken dürfen|Zusatzzeichen|1
 1010-14|Information Rollende Landstraße|Zusatzzeichen|1
 1010-52|Radverkehr|Zusatzzeichen|1
 1010-53|Fußgänger|Zusatzzeichen|1
@@ -372,15 +372,15 @@ const raw=`101|Gefahrstelle|Gefahrzeichen
 1010-58|Personenkraftwagen|Zusatzzeichen|1
 1010-59|Personenkraftwagen mit Anhänger|Zusatzzeichen|1
 1010-60|Lastkraftwagen mit Anhänger|Zusatzzeichen|1
-1010-61|Kraftfahrzeuge bis 25 km/h|Zusatzzeichen|1
-1010-62|Krafträder und Mopeds|Zusatzzeichen|1
+1010-61|Kraftfahrzeuge und Züge, die nicht schneller als 25 km/h fahren können oder dürfen|Zusatzzeichen|1
+1010-62|Krafträder, auch mit Beiwagen, Kleinkrafträder und Mopeds|Zusatzzeichen|1
 1010-63|Mofas|Zusatzzeichen|1
 1010-64|Gespannfuhrwerk|Zusatzzeichen|1
 1010-65|E-Bikes|Zusatzzeichen|1
 1010-66|Elektrisch betriebene Fahrzeuge|Zusatzzeichen|1
 1010-67|Wohnmobile|Zusatzzeichen|1
-1010-68|Elektrokleinstfahrzeug|Zusatzzeichen|1
-1010-69|Lastenfahrrad|Zusatzzeichen|1
+1010-68|Elektrokleinstfahrzeug im Sinne der Elektrokleinstfahrzeuge-Verordnung (eKFV)|Zusatzzeichen|1
+1010-69|Fahrrad zum Transport von Gütern oder Personen – Lastenfahrrad|Zusatzzeichen|1
 1012-30|Ladezone|Zusatzzeichen|1
 1012-32|Radfahrer absteigen|Zusatzzeichen|1
 1012-33|Keine Mofas|Zusatzzeichen|1`;
