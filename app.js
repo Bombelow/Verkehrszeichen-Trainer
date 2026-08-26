@@ -1186,7 +1186,8 @@ const imageOverrides={
   '626':'626-10','628':'628-10','157':'157-10','159':'159-10','162':'162-10',
   '201':'201-50','241':'241-30'
 };
-const signs=[...new Map(raw.split('\n').map(line=>{const [id,name,category,extra]=line.split('|');const imageId=imageOverrides[id]??(reportedWithoutStaticSvg.has(id)?null:id);const svg=officialVzKatAssets.has(id)?`assets/vz/${id}.png`:imageId?`https://sevas.nrw.de/vz/${imageId}.svg`:null;return[id,{id,name,category,extra:extra==='1',svg,quiz:verifiedQuizIds.has(id)&&(!reportedWithoutStaticSvg.has(id)||officialVzKatAssets.has(id))}]})).values()];
+const vzOrder=new Intl.Collator('de-DE',{numeric:true,sensitivity:'base'});
+const signs=[...new Map(raw.split('\n').map(line=>{const [id,name,category,extra]=line.split('|');const imageId=imageOverrides[id]??(reportedWithoutStaticSvg.has(id)?null:id);const svg=officialVzKatAssets.has(id)?`assets/vz/${id}.png`:imageId?`https://sevas.nrw.de/vz/${imageId}.svg`:null;return[id,{id,name,category,extra:extra==='1',svg,quiz:verifiedQuizIds.has(id)&&(!reportedWithoutStaticSvg.has(id)||officialVzKatAssets.has(id))}]})).values()].sort((a,b)=>vzOrder.compare(a.id,b.id));
 const app=document.querySelector('#app');let current='start';let library={query:'',category:'all',extras:true};let session=null;let account=null;let syncTimer=null;
 const load=key=>JSON.parse(localStorage.getItem(key)||'{}');const save=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
 const stats=()=>account?account.stats:load('vzt-stats');const progress=()=>account?account.progress:load('vzt-progress');
